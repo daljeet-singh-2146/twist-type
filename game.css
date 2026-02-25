@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    background-color: rgb(50, 52, 55);
+    font-family: "Roboto Mono", monospace;
+    color: rgb(100, 102, 105);
+}
+.game{
+    margin-top: 110px;
+}
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+}
+.logo{
+    width: 60px;
+    margin-right: 10px;
+    margin-top: -10px;
+}
+.game-name{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.name{
+    text-decoration: none;
+}
+.reset-btn{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: rgb(149, 149, 149);
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    margin-right: 65px;
+    border: none;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+.reset-btn:hover{
+    color: white;
+}
+.parent-cont{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.duration{
+    background-color: rgb(44, 46, 49);
+    padding: 5px 60px;
+    border-radius: 10px;
+}
+.s30, .s60, .s90, .s120{
+    background-color: transparent;
+    border: none;
+    color: rgb(100, 102, 105);
+    margin: 0px 2px;
+    transition: color .1s;
+    cursor: pointer;
+}
+.s30{
+    margin-left: 35px;
+}
+.s30:hover, .s60:hover, .s90:hover, .s120:hover{
+    color: white;
+}
+.selected{
+    color:rgb(232, 182, 0)
+}
+.js-main-para {
+    font-size: 30px;
+    padding-left: 32px;
+    padding-right: 20px;
+}
+.word {
+    display: inline-block;
+    padding-right: 15px;
+    padding-bottom: 7px;
+}
+.letter{
+    margin: 0px 1px;
+}
+.correct {
+    color: white;
+}
+.wrong {
+    color: rgb(222, 37, 37);
+}
+.extra {
+    color: rgb(160, 0, 0);
+}
+.active {
+    animation: blink 2s infinite;
+}
+.wrong-word {
+    text-decoration: underline;
+    text-decoration-color: rgb(222, 37, 37);
+}
+.cursor {
+    background-color: rgb(255, 200, 0);
+    display: inline-block;
+    width: 3px;
+    height: 37px;
+    margin: 0px -1px;
+    margin-bottom: -9px;
+    border-radius: 2px;
+}
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+.time, .timer{
+    color: rgb(50, 52, 55);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    margin: 10px 30px;
+}
+.timer{
+    color: rgb(226, 177, 0);
+}
+.focus{
+    position: relative;
+}
+.warn{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blur{
+    filter: blur(4px);
+    cursor: pointer;
+}
+.result{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.wpm-result, .acc-result, .time-result{
+    display: flex;
+    align-items: end;
+    margin-right: 70px;
+    font-size: 35px;
+    color: rgb(231, 181, 0);
+}
+.wpm, .user-time, .acc{
+    color: rgb(100, 102, 105);
+    font-size: 28px;
+    margin-bottom: 2px;
+    margin-right: 7px;
+}
+@media screen and (max-width: 700px) {
+  .wpm-result, .acc-result, .time-result{
+    font-size: 28px;
+    margin-right: 25px;
+  }
+  .wpm, .user-time, .acc{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wpm-result, .acc-result, .time-result{
+    font-size: 24px;
+    margin-right: 20px;
+  }
+  .wpm, .user-time, .acc{
+    font-size: 18px;
+  }
+  .duration{
+    padding: 5px 35px;
+  }
+  .time, .timer{
+    font-size: 24px;
+  }
+  .js-main-para {
+    font-size: 27px;
+  }
+}

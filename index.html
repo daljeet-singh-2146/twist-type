@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwistType</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="header">
+        <a class="name" href="index.html">
+            <div class="game-name">
+                <img class="logo" src="images/keyboard.png">
+                TwistType
+            </div>
+        </a>
+        <button class="reset-btn">Restart</button>
+    </div>
+    <div class="game">
+        <div class="parent-cont">
+            <div class="duration">
+                duration
+                <button class="s30 selected">30</button>
+                <button class="s60">60</button>
+                <button class="s90">90</button>
+                <button class="s120">120</button>
+            </div>
+        </div>
+        <div class="time">30</div>
+        <div class="focus">
+            <div class="focus-js"></div>
+            <div class="main-para js-main-para"></div>
+        </div>
+        <div class="result"></div>
+    </div>
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
