@@ -8,6 +8,7 @@ body {
     margin-top: 110px;
 }
 .header{
+    background-color: rgb(50, 52, 55);
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -190,3 +191,4 @@ body {
   }
 
 }
+
