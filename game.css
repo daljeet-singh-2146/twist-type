@@ -15,6 +15,7 @@ body {
     left: 0;
     right: 0;
     padding-top: 20px;
+    z-index: 1;
 }
 .logo{
     width: 60px;
@@ -187,4 +188,5 @@ body {
   .js-main-para {
     font-size: 27px;
   }
+
 }
