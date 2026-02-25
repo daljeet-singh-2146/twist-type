@@ -21,6 +21,11 @@ body {
     margin-right: 10px;
     margin-top: -10px;
 }
+.input{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
 .game-name{
     display: flex;
     align-items: center;
@@ -189,5 +194,6 @@ body {
   }
 
 }
+
 
 
