@@ -8,7 +8,6 @@ body {
     margin-top: 110px;
 }
 .header{
-    background-color: rgb(50, 52, 55);
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -16,7 +15,6 @@ body {
     left: 0;
     right: 0;
     padding-top: 20px;
-    z-index: 1;
 }
 .logo{
     width: 60px;
@@ -191,4 +189,5 @@ body {
   }
 
 }
+
 
