@@ -3,6 +3,7 @@ let timeoutId;
 let globalTyping;
 let isBlurred = false;
 
+const reset = document.querySelector('.reset-btn');
 const s30 = document.querySelector('.s30');
 const s60 = document.querySelector('.s60');
 const s90 = document.querySelector('.s90');
@@ -10,33 +11,16 @@ const s120 = document.querySelector('.s120');
 
 App();
 
-document.querySelector('.reset-btn').addEventListener('click', () => {
-    reload('reset')
-})
-
-s30.addEventListener('click', () => {
-    reload(s30)
-})
-
-s60.addEventListener('click', () => {
-    reload(s60)
-})
-
-s90.addEventListener('click', () => {
-    reload(s90)
-})
-
-s120.addEventListener('click', () => {
-    reload(s120)
-})
+reset.addEventListener('click', () => reload('reset'))
+s30.addEventListener('click', () => reload(s30))
+s60.addEventListener('click', () => reload(s60))
+s90.addEventListener('click', () => reload(s90))
+s120.addEventListener('click', () => reload(s120))
 
 function reload(elm){
     document.querySelector('.selected').classList.remove('selected');
-    if(elm === 'reset'){
-        s30.classList.add('selected');
-    }else{
-        elm.classList.add('selected');
-    }
+    if(elm === 'reset') s30.classList.add('selected');
+    else elm.classList.add('selected');
     focus();
     App();
 }
