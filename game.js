@@ -92,7 +92,7 @@ function App(){
 
         if(isBlurred) return;
 
-        if(!isRunning && event.key.length === 1){
+        if(!isRunning && event.key.length === 1 && event.key != ' '){
             timer();
             isRunning = true;
         }
@@ -150,6 +150,10 @@ function App(){
         }
 
         if(key === ' '){
+
+            if(curLetter.classList.contains('#')){
+                return;
+            }
 
             if(document.querySelector('.word.current .wrong') || 
             document.querySelector('.word.current .extra') || isSkipped()){
