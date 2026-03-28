@@ -77,7 +77,7 @@ body {
 .selected{
     color:rgb(232, 182, 0)
 }
-.js-main-para {
+.main-para {
     font-size: 30px;
     padding-left: 32px;
     padding-right: 20px;
@@ -120,16 +120,19 @@ body {
     25%, 75% { opacity: 0; }
 }
 .time, .timer{
-    color: rgb(50, 52, 55);
+    opacity: 0;
+    color: rgb(226, 177, 0);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
     margin: 10px 30px;
 }
 .timer{
-    color: rgb(226, 177, 0);
+    opacity: 1;
 }
 .focus{
     position: relative;
+    height: 122px;
+    overflow: hidden;
 }
 .warn{
     color: white;
