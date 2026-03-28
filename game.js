@@ -19,8 +19,12 @@ s120.addEventListener('click', () => reload(s120))
 
 function reload(elm){
     document.querySelector('.selected').classList.remove('selected');
-    if(elm === 'reset') s30.classList.add('selected');
-    else elm.classList.add('selected');
+    document.querySelector('.js-main-para').style.marginTop = '0px';
+    if(elm === 'reset'){
+        s30.classList.add('selected');
+    }else{
+        elm.classList.add('selected');
+    }
     focus();
     App();
 }
@@ -43,14 +47,14 @@ function App(){
     }
 
     const timeCount = document.querySelector('.selected').innerText;
-    let wordCount = 43;
+    let wordCount = 100;
 
     if(timeCount == 60){
-        wordCount = 100;
-    }else if(timeCount == 90){
-        wordCount = 160;
-    }else if(timeCount == 120){
         wordCount = 200;
+    }else if(timeCount == 90){
+        wordCount = 300;
+    }else if(timeCount == 120){
+        wordCount = 400;
     }
 
     for(let i = 0; i < wordCount; i++){
@@ -154,7 +158,6 @@ function App(){
             const text = activeLetter.innerText;
             activeLetter.innerHTML = `<span class="cursor"></span>${text}`
             correctWords++;
-
         }
 
         if(isLetter){
@@ -171,20 +174,21 @@ function App(){
                     activeLetter.classList.remove('current');
                 }
 
-                if(key === curLetter.innerText){
+                if(key === curLetter.innerText && !curLetter.classList.contains('extra')){
                     curLetter.classList.add('correct');
-                    correctLetters += 1;
+                    correctLetters++;
                 } else{
                     curLetter.classList.add('wrong');
                 }
-                totalLetters += 1;
+
+                totalLetters++;
                 cursor.remove();
                 curLetter.innerHTML += `<span class="cursor"></span>`
                 return;
             }
 
             if(key === curLetter.innerText){
-                correctLetters += 1;
+                correctLetters++;
                 curLetter.classList.add('correct')
                 curLetter.nextElementSibling.classList.add('current')
                 curLetter.classList.remove('current')
@@ -197,7 +201,13 @@ function App(){
             const newLetter = document.querySelector('.letter.current');
             const text = newLetter.innerText;
             newLetter.innerHTML = `<span class="cursor"></span>${text}`
-            totalLetters += 1;
+            totalLetters++;
+        }
+
+        if(document.querySelector('.word.current').getBoundingClientRect().top > 235){
+            const para = document.querySelector('.js-main-para');
+            const margin = parseInt(para.style.marginTop || '0px');
+            para.style.marginTop = (margin - 43) + 'px';
         }
         
         function isSkipped() {
@@ -239,7 +249,7 @@ function App(){
         timeoutId = setTimeout(() => {
             clearInterval(intervalId);
             isRunning = false;
-            document.removeEventListener('keyup', globalTyping)
+            document.removeEventListener('keyup', globalTyping);
             document.querySelector('.result').innerHTML = `
                 <div class="wpm-result">
                     <div class="wpm">wpm</div>
@@ -258,11 +268,9 @@ function App(){
     }
 
     function accuracy(correctLetters, totalLetters){
-        if(correctLetters === totalLetters){
-            return 100;
-        }else{
-            return ((correctLetters/totalLetters)*100).toFixed(2);
-        }
+        if(totalLetters === 0) return 0.00;
+        else if(correctLetters === totalLetters) return 100;
+        else return ((correctLetters/totalLetters)*100).toFixed(2);
     }
 }
 
