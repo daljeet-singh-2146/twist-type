@@ -82,6 +82,7 @@ body {
     padding-left: 32px;
     padding-right: 20px;
     cursor: default;
+    user-select: none;
 }
 .word {
     display: inline-block;
@@ -132,8 +133,9 @@ body {
 }
 .focus{
     position: relative;
-    height: 122px;
+    height: 125px;
     overflow: hidden;
+    border: solid 1px green;
 }
 .warn{
     color: white;
