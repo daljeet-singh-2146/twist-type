@@ -81,7 +81,7 @@ body {
     font-size: 30px;
     padding-left: 32px;
     padding-right: 20px;
-    cursor: none;
+    cursor: default;
 }
 .word {
     display: inline-block;
