@@ -204,10 +204,10 @@ function App(){
             totalLetters++;
         }
 
-        if(document.querySelector('.word.current').getBoundingClientRect().top > 235){
+        if(document.querySelector('.word.current').getBoundingClientRect().top > 248){
             const para = document.querySelector('.js-main-para');
             const margin = parseInt(para.style.marginTop || '0px');
-            para.style.marginTop = (margin - 43) + 'px';
+            para.style.marginTop = (margin - 46) + 'px';
         }
         
         function isSkipped() {
