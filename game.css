@@ -133,9 +133,8 @@ body {
 }
 .focus{
     position: relative;
-    height: 125px;
+    height: 138px;
     overflow: hidden;
-    border: solid 1px green;
 }
 .warn{
     color: white;
